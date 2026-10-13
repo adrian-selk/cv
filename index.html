@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adrian Selk CV</title>
+<meta name="description" content="CV of Adrian Selk: machine learning, vision-language models, Earth observation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: one A4-like sheet centred on a cool paper ground; sections stack in the same order as the PDF */
+:root {
+  color-scheme: light;
+  --ground: #eceeed;
+  --sheet: #ffffff;
+  --ink: #1b1f23;
+  --mute: #58616a;
+  --rule: #a7adb1;
+  --accent: #1d5d78;
+  --edge: 0 1px 2px rgb(20 32 44 / .07), 0 10px 28px rgb(20 32 44 / .07);
+  --serif: "Source Serif 4", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --sans: "Source Sans 3", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #101315; --sheet: #191d20; --ink: #e3e6e8; --mute: #9aa3aa;
+    --rule: #485056; --accent: #85bcd5; --edge: 0 0 0 1px #262c30;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #101315; --sheet: #191d20; --ink: #e3e6e8; --mute: #9aa3aa;
+  --rule: #485056; --accent: #85bcd5; --edge: 0 0 0 1px #262c30;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--ground);
+  color: var(--ink);
+  font: 400 1rem/1.55 var(--serif);
+  padding-inline: 16px;
+  padding-block: 2rem 3rem;
+  margin: 0;
+}
+.sheet {
+  max-width: 45rem;
+  margin: 0 auto;
+  background: var(--sheet);
+  box-shadow: var(--edge);
+  border-radius: 3px;
+  padding: 3rem 3.25rem 2.5rem;
+}
+@media (max-width: 600px) {
+  body { padding-block: 1rem 2rem; }
+  .sheet { padding: 1.75rem 1.25rem 1.5rem; }
+}
+
+header { text-align: center; }
+h1 {
+  font-size: 2.1rem;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: .005em;
+  margin: 0 0 .7rem;
+  text-wrap: balance;
+}
+.contact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .2rem 1.1rem;
+  font-family: var(--sans);
+  font-size: .93rem;
+  color: var(--mute);
+}
+.contact li { overflow-wrap: anywhere; }
+
+section { margin-top: 1.9rem; }
+h2 {
+  font-family: var(--sans);
+  font-size: .8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .13em;
+  margin: 0 0 .85rem;
+  padding-bottom: .35rem;
+  border-bottom: 1px solid var(--rule);
+}
+.entries { display: grid; gap: 1rem; }
+.entry-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0 1rem;
+}
+.entry-title { font-weight: 600; min-width: 0; }
+.date {
+  font-family: var(--sans);
+  font-size: .9rem;
+  color: var(--mute);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.org { font-style: italic; color: var(--mute); margin: .05rem 0 0; }
+
+ul.pts {
+  list-style: none;
+  margin: .3rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: .25rem;
+}
+ul.pts li { position: relative; padding-left: 1rem; min-width: 0; }
+ul.pts li::before { content: "-"; position: absolute; left: .1rem; color: var(--mute); }
+
+ol.pubs { list-style: none; margin: 0; padding: 0; }
+ol.pubs li { display: grid; grid-template-columns: 2rem 1fr; }
+ol.pubs .num { font-family: var(--sans); color: var(--mute); }
+.contrib { display: block; font-size: .93rem; color: var(--mute); margin-top: .2rem; }
+
+.inline-list { margin: 0; }
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  overflow-wrap: anywhere;
+}
+a:hover { text-decoration-thickness: 2px; }
+.pdf { margin: .9rem 0 0; font-family: var(--sans); font-size: .9rem; }
+
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+@media print {
+  body { background: #fff; color: #000; padding: 0; }
+  .sheet { box-shadow: none; max-width: none; padding: 0; }
+  .pdf, footer { display: none; }
+}
+
+footer {
+  max-width: 45rem;
+  margin: 1rem auto 0;
+  text-align: center;
+  font-family: var(--sans);
+  font-size: .8rem;
+  color: var(--mute);
+}
+</style>
+</head>
+<body>
+
+<main class="sheet">
+  <header>
+    <h1>Adrian Selk</h1>
+    <ul class="contact">
+      <li>Ludwigsfelde, Germany</li>
+      <li><a href="mailto:aadrianselk@gmail.com">aadrianselk@gmail.com</a></li>
+      <li><a href="https://github.com/adrian-selk" target="_blank" rel="noopener">github.com/adrian-selk</a></li>
+      <li><a href="https://linkedin.com/in/adrian-selk" target="_blank" rel="noopener">linkedin.com/in/adrian-selk</a></li>
+    </ul>
+    <p class="pdf"><a href="Selk_Adrian_CV.pdf">PDF version</a></p>
+  </header>
+
+  <section>
+    <h2>Education</h2>
+    <div class="entries">
+      <div>
+        <div class="entry-head"><span class="entry-title">B.Sc. Mathematics (second degree)</span><span class="date">Oct 2026 - present</span></div>
+        <p class="org">Humboldt-Universität zu Berlin, Germany</p>
+        <ul class="pts">
+          <li>Coursework on calculus and linear algebra</li>
+        </ul>
+      </div>
+      <div>
+        <div class="entry-head"><span class="entry-title">B.Sc. Business Information Systems - Data Science</span><span class="date">Oct 2023 - Sep 2026</span></div>
+        <p class="org">Baden-Württemberg Cooperative State University (DHBW) Stuttgart, Germany</p>
+        <ul class="pts">
+          <li>Cooperative (dual) degree programme run jointly with IBM; 210 ECTS; final grade 1.6 (1.0 = best)</li>
+          <li>Relevant coursework: machine learning, mathematics (calculus, linear algebra, statistics, operations research), algorithms and data structures, big data, distributed systems, software engineering</li>
+          <li>Thesis: <em>Augmenting Vision-Language Models for Wildfire Burn Assessment: Capabilities and Limits.</em><br>Conducted at IBM Research Zurich, supervised by Dr. Mattia Rigotti. Grade 1.5.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="entry-head"><span class="entry-title">Abitur (university entrance qualification)</span><span class="date">2022</span></div>
+        <p class="org">Marie-Curie-Gymnasium Ludwigsfelde, Germany</p>
+        <ul class="pts">
+          <li>Grade 1.4; advanced courses in Mathematics and English</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Publications</h2>
+    <ol class="pubs">
+      <li><span class="num">[1]</span><span>C. Lohse, <strong>A. Selk</strong>, A. Ba, J. Wahl, M. Ruffini. <em>Licence to Scale: A Microservice Simulation Environment for Benchmarking Agentic AI.</em> Workshop on Scaling Environments for Agents (SEA), NeurIPS 2025.<span class="contrib">Contribution: designed and built the simulation environment the study runs on, during a research internship at IBM Research Dublin; released as open source (see below).</span></span></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Open-Source Software</h2>
+    <ul class="pts">
+      <li><strong>L2SBench</strong> (now <em>ITBench Exploratory Simulator</em>): microservice simulation environment accompanying the NeurIPS 2025 SEA workshop paper; <a href="https://github.com/itbench-hub/ITBench-Exploratory-Simulator" target="_blank" rel="noopener">github.com/itbench-hub/ITBench-Exploratory-Simulator</a></li>
+      <li><strong>ONNX-MLIR</strong>: upstream contributor to the open-source AI compiler (1,000+ GitHub stars); operator optimisation in C; <a href="https://github.com/onnx/onnx-mlir" target="_blank" rel="noopener">github.com/onnx/onnx-mlir</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Research Experience</h2>
+    <div class="entries">
+      <div>
+        <div class="entry-head"><span class="entry-title">Research Intern | Adapting VLMs to Earth-Observation Signals</span><span class="date">Aug - Sep 2026</span></div>
+        <p class="org">IBM Research Zurich, Switzerland (remote)</p>
+        <ul class="pts">
+          <li>Taught a small generalist VLM to read physically motivated renderings of Earth-observation data: spectral indices, SAR composites, temporal differences</li>
+        </ul>
+      </div>
+      <div>
+        <div class="entry-head"><span class="entry-title">Bachelor's Thesis | Vision-Language Models for Earth Observation</span><span class="date">Feb - May 2026</span></div>
+        <p class="org">IBM Research Zurich, Switzerland (remote)</p>
+        <ul class="pts">
+          <li>Built a multi-stage system that combines vision-language models with conventional classifiers for assessing wildfire damage from satellite imagery, along with a benchmark to evaluate it</li>
+          <li>Central finding: the model's final assessment matched its initial visual read in 99.4% of cases, replicated across two VLMs; the later processing stages almost never revised it (visual anchoring effect)</li>
+        </ul>
+      </div>
+      <div>
+        <div class="entry-head"><span class="entry-title">Research Intern | ONNX-MLIR Compiler</span><span class="date">Aug - Nov 2025</span></div>
+        <p class="org">IBM Research Tokyo, Japan</p>
+        <ul class="pts">
+          <li>Optimised several operators in C for the open-source ONNX-MLIR AI compiler; changes merged upstream</li>
+        </ul>
+      </div>
+      <div>
+        <div class="entry-head"><span class="entry-title">Research Intern | Agentic AI</span><span class="date">May - Aug 2025</span></div>
+        <p class="org">IBM Research Dublin, Ireland</p>
+        <ul class="pts">
+          <li>Designed and built a causality-driven microservice simulation environment for benchmarking reinforcement-learning and LLM-agent systems on cloud autoscaling under service-level objectives</li>
+          <li>Co-authored the resulting paper, accepted at the NeurIPS 2025 SEA workshop; environment released as open source (<em>L2SBench</em>)</li>
+        </ul>
+      </div>
+      <div>
+        <div class="entry-head"><span class="entry-title">Research Intern | Climate Risk Analytics</span><span class="date">Nov 2024 - Feb 2025</span></div>
+        <p class="org">IBM Research Zurich, Switzerland (remote)</p>
+        <ul class="pts">
+          <li>Built a workflow to ingest raw climate data and compute climate indices supporting risk assessment for critical infrastructure (roads, railways, bridges); analysed and visualised long-term climate trends</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Industry Experience</h2>
+    <div class="entries">
+      <div>
+        <div class="entry-head"><span class="entry-title">Intern | Client Engineering</span><span class="date">Jun - Sep 2024</span></div>
+        <p class="org">IBM, Böblingen, Germany</p>
+        <ul class="pts">
+          <li>Developed a text-to-SQL agent translating natural-language questions into queries over a large product database; supported client pilot projects</li>
+        </ul>
+      </div>
+      <div>
+        <div class="entry-head"><span class="entry-title">Intern | Customer Success Management</span><span class="date">Jan - Mar 2024</span></div>
+        <p class="org">IBM, Ehningen, Germany</p>
+        <ul class="pts">
+          <li>Co-developed a LangChain tutorial and built early prototype applications on top of large language models</li>
+        </ul>
+      </div>
+      <div>
+        <div class="entry-head"><span class="entry-title">Intern | Marketing &amp; CRM Analytics</span><span class="date">Oct 2022 - Jun 2023</span></div>
+        <p class="org">TD Reply, Berlin, Germany (pre-university)</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Technical Skills</h2>
+    <ul class="pts">
+      <li><strong>Programming:</strong> Python (advanced), Java, SQL, R, JavaScript</li>
+      <li><strong>Machine learning:</strong> PyTorch, scikit-learn, LangChain, LangGraph, Gymnasium (RL environments), prompting and evaluation of large multimodal models</li>
+      <li><strong>Tools:</strong> Git, Docker, Jupyter, LaTeX, Kubernetes (basic)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Languages</h2>
+    <p class="inline-list">German (native) &bull; English (IELTS 8.0, May 2026) &bull; Japanese (beginner) &bull; French (basic)</p>
+  </section>
+
+  <section>
+    <h2>Awards</h2>
+    <ul class="pts">
+      <li>2nd place, Mesh Stuttgart Hackathon (Apr 2024): end-to-end retrieval-augmented chatbot over machine manuals for first-line technical support</li>
+    </ul>
+  </section>
+</main>
+<footer>Updated October 2026</footer>
+</body>
+</html>
